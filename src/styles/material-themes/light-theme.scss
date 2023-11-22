@@ -1,0 +1,58 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use 'custom-colors' as colors;
+@use 'material-overwrite/material-overwrite-theme' as mat-custom;
+@use 'utilities/utilities-theme' as utilities;
+@use 'coin-package/package-list/package-list.component-theme' as coins-package;
+@use 'coin-package/payment-card/payment-card.component-theme' as card;
+@use 'coin-package/payment-methods/payment-methods.component-theme.scss' as payment-methods;
+@use 'coin-package/purchase-details/purchase-details.component-theme' as result;
+@use 'redirect/checkout-details/checkout-details.component-theme' as checkout-details;
+@use 'coin-package/package-list/package/package.component-theme' as package;
+@use 'shared/components/info-group/info-group-theme' as info-group;
+@use 'shared/components/back-nav/back-nav-theme' as back-nav;
+@use 'layout/layout.component-theme' as layout;
+@use 'layout/sidenav/sidenav.component-theme' as sidenav;
+@use 'cash-out/withdrawal-amount/withdrawal-amount-theme' as withdrawal;
+@use 'cash-out/trivia-questions/trivia-questions-theme' as trivia;
+@use 'cash-out/withdrawal-details/withdrawal-details-theme' as withdrawal-details;
+@use 'custom-global-theme' as global;
+
+@include mat.core();
+
+$light-theme-primary: mat.define-palette(colors.$deep-purple-custom);
+$light-theme-accent: mat.define-palette(colors.$yellow-custom, 500, A100, A400);
+$light-theme-warn: mat.define-palette(colors.$red-custom);
+
+$light-theme-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $light-theme-primary,
+      accent: $light-theme-accent,
+      warn: $light-theme-warn,
+    ),
+    typography: mat.define-typography-config(
+      $font-family: '"Rubik", sans-serif',
+    )
+  )
+);
+
+// Applied theme
+@include mat.all-component-themes($light-theme-theme);
+@include mat-custom.all-component-themes($light-theme-theme);
+@include utilities.all-utilities-themes($light-theme-theme);
+// Custom components theme
+@include global.theme($light-theme-theme);
+@include coins-package.theme($light-theme-theme);
+@include package.theme($light-theme-theme);
+@include card.theme($light-theme-theme);
+@include payment-methods.theme($light-theme-theme);
+@include result.theme($light-theme-theme);
+@include checkout-details.theme($light-theme-theme);
+@include info-group.theme($light-theme-theme);
+@include layout.theme($light-theme-theme);
+@include sidenav.theme($light-theme-theme);
+@include withdrawal.theme($light-theme-theme);
+@include trivia.theme($light-theme-theme);
+@include withdrawal-details.theme($light-theme-theme);
+@include back-nav.theme($light-theme-theme);

@@ -1,0 +1,8 @@
+// Space between inline-flex items
+// for field info static
+
+@mixin inline-flex-gap() {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}

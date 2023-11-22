@@ -1,0 +1,243 @@
+@import './../../../styles//custom-breakpoints.scss';
+
+.row, .col-md-3, .col-md-9, .col-md-6 .col-md-12 {
+    padding: 0px!important;
+    margin: 0px!important;
+}
+
+.coins-package-section-button-back{
+    height: 29px;
+    font-size: 25px;
+    display: flex;
+}
+
+.coins-package-button-back{
+    padding-left:10px;
+    display: flex;
+    cursor: pointer;
+}
+
+.coins-package-button-link{
+    display: none!important;
+}
+
+.redeem-button-link{
+    display: none!important;
+}
+
+.package-mobile-button-comments{
+    display: flex;
+}
+
+.package-mobile-button-comments i{
+    font-size: 50px;
+    padding-left: 10px;
+}
+
+.content-coins-package{
+    &-section{
+      padding-top: 5px;
+      margin-bottom: 82PX;
+    }
+}
+
+.section-payment-btn-process{
+    position: fixed;
+    bottom: 0;
+    margin: 0 -16px;
+    left: 0;
+    padding: 10px 2em;
+    right: 0;
+  }
+
+  .content-payment-btn-process{
+    display: flex;
+    justify-content: center;
+    background-color: #4940B5
+  }
+
+  .btn-payment-proccess{
+    width: 100%;
+    max-width: 350px;
+    height: 62px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: #4940B5;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .container-thanks{
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-logo-thanks i{
+    font-size: 120px;
+  }
+
+  .container-thanks{
+    padding-top: 10px;
+  }
+
+  .label-title-thanks{
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .label-text1-thanks{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+  }
+
+  .label-text2-thanks{
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .label-title2-thanks{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 20px;
+  }
+
+  .container-thanks-details{
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+  }
+
+  .label-text3-thanks{
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .label-text4-thanks{
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .container-details{
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  @media (min-width: map_get($global-breakpoint, md)) {
+    .coins-package-button-link{
+        display: none;
+        height: 315px;
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &-label{
+          font-size: 22px;
+          &-words{
+            display: inline-flex;
+            font-weight: 500;
+          }
+          &-symbol{
+            display: inline-flex;
+            font-size: 27px;
+            padding-left: 5px;
+          }
+        }
+      }
+
+      .redeem-button-link{
+        height: 315px;
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &-label{
+          font-size: 22px;
+
+          &-words{
+            display: inline-flex;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .content-coins-package{
+        //border-radius: 12px;
+        //margin-top: 52px;
+        //margin-bottom:47px;
+        //margin-right: 75px;
+        //margin-left: 75px;
+
+        &-section{
+          padding-top: 30px;
+          margin-bottom: inherit;
+        }
+      }
+
+    .content-payment-btn-process{
+      min-width: 328px;
+      background-color: white;
+    }
+
+    .section-payment-btn-process{
+      position: inherit;
+      margin: 0;
+      border-radius: 10px 10px 10px 10px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      position: static
+    }
+
+    .btn-payment-proccess{
+        height: 42px;
+        min-width: 328px;
+    }
+
+    .section-logo-thanks{
+      padding-top: 0px;
+    }
+
+    .label-text1-thanks{
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+
+    .label-title2-thanks{
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    .container-thanks-details{
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 7px;
+    }
+
+    .container-details{
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+    :host {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+  }
+  
+  }

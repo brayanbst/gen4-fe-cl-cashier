@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+  // Get colors from theme
+  $color-config: mat.get-color-config($theme);
+
+  // Palette colors
+  $primary: map.get($color-config, 'primary');
+  $accent: map.get($color-config, 'accent');
+
+  // Set colors from theme
+  .mat-flat-button.mat-accent {
+    background-color: mat.get-color-from-palette($accent, 600);
+    color: mat.get-color-from-palette($primary, 500);
+    .mat-button-disabled {
+      color: #4a4a4a !important;
+      background-color: #d0d0d0 !important;
+    }
+  }
+
+  .mat-raised-button.mat-accent {
+    background-color: mat.get-color-from-palette($accent, 600);
+    color: mat.get-color-from-palette($primary, 500);
+  }
+
+  .mat-raised-button.mat-primary {
+    // Example:
+    background-color: mat.get-color-from-palette($primary, 100);
+  }
+
+  .mat-stroked-button.mat-primary {
+    // Example:
+    border-color: mat.get-color-from-palette($primary, 500);
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

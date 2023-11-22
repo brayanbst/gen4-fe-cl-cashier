@@ -1,0 +1,27 @@
+.nav-list-cashier.mat-list-base {
+  padding-top: 0;
+  height: 100%;
+
+  .mat-list-item {
+    height: 50%;
+    text-align: center;
+
+    .mat-list-text .mat-line {
+      font-size: 1.5rem;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    &-active {
+      .mat-list-text .mat-line {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+
+        svg {
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+}

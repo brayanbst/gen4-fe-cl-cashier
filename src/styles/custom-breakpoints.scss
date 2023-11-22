@@ -1,0 +1,17 @@
+/* Breakpoints
+   Based on bulma and bootstrap
+   xs: start mobile size
+   md: start tablet size
+   lg: start desktop size
+*/
+$global-breakpoint: (
+  xs: 0,
+  md: 768px,
+  lg: 1200px,
+);
+
+// Container Width
+$container-max-widths: (
+  md: 100%,
+  lg: 1200px
+) !default;

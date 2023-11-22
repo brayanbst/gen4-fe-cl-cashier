@@ -1,0 +1,473 @@
+@import './../styles//custom-breakpoints.scss';
+
+
+  .row, .col-md-3, .col-md-9, .col-md-6 .col-md-12 {
+    padding: 0px!important;
+    margin: 0px!important;
+  }
+
+  .coins-package-section-button-back{
+    height: 29px;
+    font-size: 25px;
+    display: flex;
+  }
+
+  .coins-package-buttons-mobile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-button-link{
+    font-size: 18px;
+    height: 50px;
+  }
+
+  .mobile-button-redeem{
+    font-size: 18px;
+    height: 50px;
+  }
+
+  .coins-package-button-back{
+    padding-left:10px;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .package-mobile-button-link{
+    display: flex;
+  }
+
+  .package-mobile-button-redeem{
+    display: flex;
+  }
+
+  .coins-package-button-link{
+    display: none!important;
+  }
+
+  .redeem-button-link{
+    display: none!important;
+  }
+
+  .package-mobile-button-comments{
+    display: flex;
+  }
+
+  .package-mobile-button-comments i{
+    font-size: 50px;
+    padding-left: 10px;
+  }
+
+  .label-content {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .content-coins-package{
+    &-section{
+      padding-top: 16px;
+      &-elements{
+        display: flex;
+        justify-content: space-between;
+        //padding-left:45px;
+        //padding-right:45px;
+        //padding-top:5px;
+        &-flex{
+          display: none;
+          &-section{
+            display: flex;
+            align-items: center;
+
+            &-button{
+              margin-left: 20px;
+            }
+          }
+        }
+        &-flex2{
+          display: flex;
+      }
+        &-comments{
+          display: none;
+        }
+      }
+      &-elementspayment{
+        display: flex;
+        padding-left:45px;
+        padding-right:45px;
+        padding-top:5px;
+        padding-bottom: 10px;
+        justify-content: center;
+        &-flex{
+          padding-top: 25px;
+        }
+      }
+    }
+  }
+
+  .section-resume-coins-purchase{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .resume-coins-purchase{
+    width: 260px;
+    border-radius: 10px;
+  }
+
+  .section-amount-coins-purchase{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 16px;
+  }
+
+  .amount-coins-purchase{
+    font-size: 44px;
+    display: flex;
+    font-weight: 700;
+  }
+
+  .section-data-coins-purchase{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .data-coins-purchase{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 16px;
+  }
+
+  .container-payment-card{
+    padding-top: 24px;
+    padding-right: 1em;
+    padding-left: 1em;
+    // min-height: 75vh;
+    //margin-bottom: 82px;
+  }
+
+  .sub-container-data-card {
+    padding: 0;
+  }
+
+  .section-payment-number-card{
+    display: flex;
+  }
+
+  .sub-section-payment-number-card{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+  }
+
+  .sub-section-payment-data-card{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .payment-number-card{
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .input-card-left{
+    width: 318px;
+  }
+
+  .input-card-date{
+    width: 120px;
+  }
+
+  .input-card-cvv{
+    width: 65px;
+  }
+  .input-card-zipcode{
+    width: 80px;
+  }
+
+  .section-remember-card{
+    display: flex;
+    align-items: center;
+    padding-bottom: 1em;
+  }
+
+  .radio-remember-card{
+    padding-left: 10px;
+  }
+
+  .label-remember-card{
+    font-size: 16px;
+    font-weight: 700;
+    padding-left: 10px;
+    margin-top: 8px
+  }
+
+  .section-payment-btn-process{
+    position: fixed;
+    bottom: 0;
+    margin: 0 -16px;
+    left: 0;
+    right: 0;
+    padding: 10px 2em;
+    bottom: 0
+  }
+
+  .content-payment-btn-process{
+    //padding: 10px 2em;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-payment-proccess {
+    width: 100%;
+    max-width: 350px;
+    height: 62px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .w-date {
+    max-width: 7.5em;
+  }
+
+  .w-cvv {
+    max-width: 5.6em;
+  }
+
+  .w-code {
+    max-width: 9em;
+    margin: 8px 0;
+  }
+
+  @media (min-width: map_get($global-breakpoint, md)) {
+    :host {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      overflow-x: hidden
+    }
+
+    .content-payment-btn-process {
+      margin-top: 56px;
+    }
+
+    .coins-package-button-link{
+      display: none;
+      height: 315px;
+      display: flex!important;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &-label{
+        font-size: 22px;
+        &-words{
+          display: inline-flex;
+          font-weight: 500;
+        }
+        &-symbol{
+          display: inline-flex;
+          font-size: 27px;
+          padding-left: 5px;
+        }
+      }
+    }
+
+    .redeem-button-link{
+      height: 315px;
+      display: flex!important;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &-label{
+        font-size: 22px;
+        &-words{
+          display: inline-flex;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .coins-package-buttons-mobile{
+      display: none!important;
+    }
+
+    .label-content{
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .content-coins-package{
+      //border-radius: 12px;
+      //margin-top: 52px;
+      //margin-bottom:47px;
+      //margin-right: 75px;
+      //margin-left: 75px;
+
+      &-section{
+        //padding-top: 30px;
+        &-elements, &elementspayment{
+          display: flex;
+          justify-content: space-between;
+          &-flex{
+            display: flex;
+            &-section{
+              display: flex;
+              align-items: center;
+              &-button{
+                margin-left: 20px;
+              }
+            }
+          }
+
+          &-flex2{
+              display: flex;
+          }
+
+          &-comments{
+            display: flex;
+            flex-direction: row-reverse!important;
+          }
+
+          &-comments i{
+            font-size: 60px;
+            cursor: pointer;
+          }
+        }
+
+        &-component{
+          padding-bottom: 44px;
+        }
+      }
+    }
+
+    .resume-coins-purchase{
+        width: 420px;
+      }
+
+      .section-amount-coins-purchase{
+        padding-top: 0px;
+      }
+
+      .amount-coins-purchase{
+        font-size: 44px;
+      }
+
+      .data-coins-purchase{
+        padding-top: 20px;
+      }
+
+  .container-payment-card{
+    padding-top: 2em;
+    padding-left: 100px;
+    margin-bottom: inherit;
+    min-height: auto;
+  }
+
+  .sub-container-data-card {
+    display: flex;
+    flex-direction: row;
+    gap: 35px
+  }
+
+  .section-payment-btn-process{
+    position: inherit;
+    margin: 0;
+    border-radius: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn-payment-proccess{
+    height: 42px;
+    min-width: 328px;
+  }
+
+  .w-date {
+    min-width: 116px;
+  }
+
+  .w-cvv {
+    min-width: 96px;
+  }
+
+  .w-code {
+    min-width: 80px;
+    margin: 0
+  }
+}
+
+@media (max-width: 370px) {
+  .input-card-left {
+    width: 280px
+  }
+
+  .input-card-date{
+    width: 114px;
+  }
+
+  .input-card-cvv{
+    width: 61px;
+  }
+  .input-card-zipcode{
+    width: 78px;
+  }
+}
+
+/* Estilo para el contenedor de los selectores */
+.account-select {
+  margin-bottom: 10px;
+  width: 150px;
+}
+
+/* Estilo para el botón que despliega las opciones */
+.mat-select-trigger {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 40px;
+  color: #333;
+  padding: 10px;
+  border: solid;
+}
+
+/* Estilo para las opciones del selector */
+.mat-option {
+  color: #4940b5;
+}
+
+/* Estilo para la opción seleccionada */
+.mat-selected {
+  background-color: #f0f0f0;
+}
+
+.delete-button {
+  position: absolute;
+  right: 0;
+}
+
+.fit-content {
+  width: fit-content;
+}
+
+.option-container {
+  display: flex;
+  align-items: center;
+}
+
+.bank-icon {
+  font-size: 25px;
+}
+
+.bank-label {
+  font-size: 17px;
+}

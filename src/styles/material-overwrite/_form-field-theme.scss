@@ -1,0 +1,41 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+  // Get colors from theme
+  $color-config: mat.get-color-config($theme);
+
+  // Palette colors
+  $primary: map.get($color-config, 'primary');
+
+  // Set colors from theme
+  .mat-form-field.mat-form-field-appearance-legacy {
+    &.mat-form-field-disabled {
+      .mat-form-field-flex {
+        background-color: mat.get-color-from-palette($primary, 500);
+      }
+    }
+  }
+
+  .mat-form-field.mat-form-field-appearance-legacy {
+    .mat-form-field-flex {
+      border-color: mat.get-color-from-palette($primary, 500);
+    }
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-label {
+    color: mat.get-color-from-palette($primary, 500);
+  }
+
+  span.mat-placeholder-required.mat-form-field-required-marker {
+    display: none;
+  }
+
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

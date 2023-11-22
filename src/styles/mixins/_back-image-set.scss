@@ -1,0 +1,6 @@
+/* Background Image Set */
+@mixin back-image-set($url-x1, $url-x2) {
+  background-image: url($url-x1);
+  background-image: -webkit-image-set($url-x1 1x, $url-x2 2x);
+  background-image: image-set($url-x1 1x, $url-x2 2x);
+}

@@ -1,0 +1,5 @@
+.mat-sidenav {
+  &.mat-drawer:not(.mat-drawer-side) {
+    box-shadow: none;
+  }
+}

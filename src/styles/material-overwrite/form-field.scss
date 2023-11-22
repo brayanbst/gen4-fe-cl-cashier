@@ -1,0 +1,91 @@
+.mat-form-field.mat-form-field-appearance-legacy {
+  width: 100%;
+  // PREFIX
+  .mat-form-field-prefix {
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+
+      .mat-icon {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  // SUFFIX
+  .mat-form-field-suffix {
+    .mat-icon-button {
+      display: block;
+      font-size: inherit;
+      left: 8px;
+      width: 38px;
+      height: 38px;
+
+      .mat-icon {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  // UNDERLINE
+  .mat-form-field-underline {
+    display: none;
+  }
+
+  // HINT
+  .mat-form-field-subscript-wrapper {
+    top: calc(100% - 1.7916666667em);
+    padding: 0 16px;
+  }
+
+  // WITHOUT LABEL
+  &.no-label {
+    // INPUT WRAPPER
+    .mat-form-field-wrapper {
+      .mat-form-field-flex {
+        .mat-form-field-infix {
+          .mat-form-field-label-wrapper {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  // WITHOUT LABEL
+  &.no-hint {
+    // INPUT WRAPPER
+    .mat-form-field-wrapper {
+      padding-bottom: 0 !important;
+    }
+  }
+
+  // WITHOUT LABEL AND HINT
+  &.mat-form-field-hide-placeholder {
+    // INPUT WRAPPER
+    .mat-form-field-wrapper {
+      border-top: 0 !important;
+      padding-bottom: 0 !important;
+
+      .mat-form-field-flex {
+        .mat-form-field-infix {
+          border-top: 0 !important; // Reserve space for Label
+        }
+      }
+    }
+  }
+}
+
+.mat-form-field-label {
+  font-size: 14px;
+}
+
+// Standard Style
+.mat-form-field.mat-form-field-appearance-standard {
+  width: 100%;
+}

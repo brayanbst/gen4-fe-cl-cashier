@@ -1,0 +1,20 @@
+@use 'mixins/mixins' as mixins;
+
+.flex-center {
+  @include mixins.flex-center();
+}
+
+.flex-center-gap {
+  @include mixins.flex-center();
+  gap: 1em;
+}
+
+.flex-between {
+  @include mixins.flex-center();
+  justify-content: space-between;
+}
+
+.flex-around {
+  @include mixins.flex-center();
+  justify-content: space-around;
+}

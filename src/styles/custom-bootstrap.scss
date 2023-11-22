@@ -1,0 +1,29 @@
+// Reboot Browser Styles
+// @import '~bootstrap/scss/reboot';
+
+// Breakpoints
+@import 'custom-breakpoints';
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+@import '~bootstrap/scss/functions';
+$grid-breakpoints: (
+  xs: map_get($global-breakpoint, xs),
+  md: map_get($global-breakpoint, md),
+  lg: map_get($global-breakpoint, lg),
+);
+@include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
+@include _assert-starts-at-zero($grid-breakpoints);
+
+$container-max-widths: (
+  md: map_get($container-max-widths, md),
+  lg: map_get($container-max-widths, lg),
+);
+
+@include _assert-ascending($container-max-widths, '$container-max-widths');
+
+// Grid
+@import '~bootstrap/scss/bootstrap-grid';
+
+// Utilities
+@import '~bootstrap/scss/utilities';
+@import '~bootstrap/scss/utilities/api';

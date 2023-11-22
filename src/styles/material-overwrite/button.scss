@@ -1,0 +1,144 @@
+@import 'custom-breakpoints';
+
+/* Types */
+
+@mixin btn-base-flex($center: center) {
+  display: flex;
+  flex-flow: row;
+  justify-content: $center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.mat-button-base.mat-flat-button:not([class='mat-button-link']),
+.mat-button-base.mat-button {
+  .mat-button-wrapper {
+    @include btn-base-flex();
+  }
+}
+
+/* Button Primary */
+/* <button mat-flat-button color="primary"> */
+.mat-button-base.mat-flat-button.mat-primary {
+  line-height: 100px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Button Secondary */
+/* <button mat-flat-button color="accent"> */
+.mat-button-base.mat-flat-button.mat-accent {
+  line-height: 40px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Button Tertiary */
+/* <button mat-flat-button> */
+.mat-button-base.mat-flat-button:not([color]) {
+  line-height: 38px;
+  padding: 0 15px;
+  border-radius: 8px;
+  font-size: 16px;
+
+  .mat-button-focus-overlay {
+    background-color: transparent;
+  }
+}
+
+/* Button Link */
+/* <button mat-button disableRipple class="mat-button-link"> */
+.mat-button-link.mat-button-base {
+  padding: 0;
+  line-height: normal;
+
+  .mat-button-wrapper {
+    @include btn-base-flex(flex-start);
+  }
+
+  .mat-button-focus-overlay {
+    background-color: transparent;
+  }
+}
+
+/* Mini FAB Button */
+/* <button mat-mini-fab color="primary"> */
+.mat-mini-fab:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+  width: 30px;
+  height: 30px;
+  line-height: normal;
+
+  .mat-button-wrapper {
+    @include btn-base-flex();
+    padding: 0;
+    margin-top: 1px;
+  }
+}
+
+.mat-mini-fab:not([disabled]):active:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+}
+
+/* Icon Button */
+/* <button mat-icon-button> */
+.mat-button-base.mat-icon-button {
+  .mat-button-wrapper {
+    @include btn-base-flex();
+    height: inherit;
+  }
+}
+
+/* Button Sizes */
+.button-small {
+  line-height: 32px !important;
+  border-radius: 4px !important;
+  font-size: 14px !important;
+}
+
+.button-large {
+  line-height: 48px !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+}
+
+/* Button Icon Responsive */
+.mat-button-base.button-responsive {
+  min-height: 40px;
+  min-width: 40px;
+  padding: 0;
+
+  span {
+    display: none;
+  }
+}
+
+/* Fix Button in Color Selector */
+.colors .color {
+  &.mat-button-toggle {
+    button {
+      height: 100%;
+    }
+
+    .mat-ripple {
+      border-radius: 50%;
+    }
+  }
+}
+
+@media (min-width: map_get($global-breakpoint, md)) {
+  .mat-button-base.button-responsive {
+    padding: 0 16px;
+
+    span {
+      display: block;
+    }
+  }
+}
+
+
+/* Stroked Style */
+.mat-button-base.mat-stroked-button.mat-primary {
+  border-width: 2px;
+  border-radius: 10px;
+}

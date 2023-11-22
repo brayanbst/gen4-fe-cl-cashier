@@ -1,0 +1,77 @@
+<div class="container-coins-package">
+    <div class="row">
+      <div class="col-12 p-0">
+        <div class="content-coins-package">
+          <div class="content-coins-package-section">
+            <div class="col-md-12 container-thanks">
+                <div class="section-logo-thanks">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="col-md-12 container-thanks">
+                <div class="label-title-thanks">
+                    {{'cashier.purchase.thanks'}}
+                </div>
+            </div>
+            <div class="col-md-12 container-thanks">
+                <div class="label-text1-thanks">
+                    {{'cashier.purchase.success1line'}}
+                    {{'cashier.purchase.success2line'}}
+                </div>
+            </div>
+            <div class="col-md-12 container-thanks">
+                <div class="label-text2-thanks">
+                    {{'payment.processor.descriptor.message'}} {{(nameOperation)?.descriptor}}
+                </div>
+            </div>
+            <div class="col-md-12 container-thanks">
+                <div class="label-title2-thanks">
+                    {{'cashier.purchase.details'}}
+                </div>
+            </div>
+            <div class="container-details">
+                <div class="col-md-12 container-thanks-details">
+                    <div class="label-text3-thanks">
+                        {{'cashier.purchase.transactionId'}} :
+                    </div>
+                    <div class="label-text4-thanks">
+                        {{transactionId}}
+                    </div>
+                </div>
+                <div class="col-md-12 container-thanks-details">
+                    <div class="label-text3-thanks">
+                        {{'cashier.purchase.amount'}} :
+                    </div>
+                    <div class="label-text4-thanks">
+                        $ {{packageSelect.pricing}}
+                    </div>
+                </div>
+                <div class="col-md-12 container-thanks-details">
+                    <div class="label-text3-thanks">
+                        {{'cashier.purchase.coins'}} :
+                    </div>
+                    <div class="label-text4-thanks">
+                        {{packageSelect.finalFunCoins}}
+                    </div>
+                </div>
+                <ng-container>
+                    <div class="col-md-12 container-thanks-details">
+                        <div class="label-text3-thanks">
+                            {{'cashier.purchase.sweeps'}} :
+                        </div>
+                        <div class="label-text4-thanks">
+                            {{packageSelect.finalRealCoins}}
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-12 section-payment-btn-process">
+                <div  class="content-payment-btn-process">
+                    <button mat-raised-button color="accent" class="btn-payment-proccess" (click)="ReturnHome()">BACK TO HOME</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

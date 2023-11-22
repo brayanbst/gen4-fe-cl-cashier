@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+  // Get colors from theme
+  $color-config: mat.get-color-config($theme);
+
+  // Palette colors
+  $primary: map.get($color-config, 'primary');
+  $accent: map.get($color-config, 'accent');
+
+  // Set colors from theme
+  .mat-nav-list .mat-list-item {
+    /*&:focus, &:hover {
+      background-color: mat.get-color-from-palette($primary, 500);
+      color: mat.get-color-from-palette($accent, 500);
+    } */
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

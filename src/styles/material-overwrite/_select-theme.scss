@@ -1,0 +1,36 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@import 'mixins/mixins';
+@import 'custom-colors';
+
+@mixin color($theme) {
+  // Get colors from theme
+  $color-config: mat.get-color-config($theme);
+
+  // Palette colors
+  $primary: map.get($color-config, 'primary');
+  $accent: map.get($color-config, 'accent');
+  $warn: map.get($color-config, 'warn');
+  $foreground: map.get($color-config, foreground);
+  $background: map.get($color-config, background);
+
+  // Set colors from theme
+  .mat-form-field.mat-form-field-appearance-legacy.mat-form-field-type-mat-select {
+    $default: mat.get-color-from-palette($primary, 500);
+    $focus: mat.get-color-from-palette($foreground, text);
+    $error: mat.get-color-from-palette($warn, 500);
+    @include mat-form-field-base-colors($default, $focus, $error);
+
+    .mat-select-placeholder {
+      color: $default;
+    }
+  }
+
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

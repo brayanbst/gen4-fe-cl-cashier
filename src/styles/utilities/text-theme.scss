@@ -1,0 +1,40 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@import 'mixins/mixins';
+@import 'custom-colors';
+
+@mixin color($theme) {
+  // Get colors from theme
+  $color-config: mat.get-color-config($theme);
+
+  // Palette colors
+  $primary: map.get($color-config, 'primary');
+  $accent: map.get($color-config, 'accent');
+  $warn: map.get($color-config, 'warn');
+  $foreground: map.get($color-config, foreground);
+  $background: map.get($color-config, background);
+
+  // Set colors from theme
+  .color-primary {
+    color: mat.get-color-from-palette($primary, 500) !important;
+  }
+  .text-color-primary {
+    color: mat.get-color-from-palette($foreground, text) !important;
+  }
+  .text-color-secondary {
+    color: mat.get-color-from-palette($foreground, secondary-text) !important;
+  }
+  .text-color-tertiary {
+    color: mat.get-color-from-palette($foreground, disabled-text) !important;
+  }
+  .text-warn {
+    color: mat.get-color-from-palette($warn) !important;
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

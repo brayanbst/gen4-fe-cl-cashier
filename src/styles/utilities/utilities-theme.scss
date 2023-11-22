@@ -1,0 +1,6 @@
+// Material Overwrite
+@use 'text-theme';
+
+@mixin all-utilities-themes($theme-or-color-config) {
+  @include text-theme.theme($theme-or-color-config);
+}

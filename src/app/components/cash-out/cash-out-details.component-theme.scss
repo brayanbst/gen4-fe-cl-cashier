@@ -1,0 +1,71 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use 'src/styles/custom-colors' as colors;
+@import 'src/styles/custom-breakpoints';
+
+@mixin color($theme) {
+  // Get colors from theme
+  $color-config: mat.get-color-config($theme);
+
+  // Palette colors
+  $primary: map.get($color-config, 'primary');
+  $accent: map.get($color-config, 'accent');
+  $grey: mat.define-palette(colors.$grey-custom);
+  $teal: mat.define-palette(colors.$teal-custom);
+
+  // Set colors from theme
+  csr-purchase-details {
+    .section-payment-btn-process {
+      background-color: mat.get-color-from-palette($primary, 500);
+    }
+
+    .btn-payment-proccess {
+      color: mat.get-color-from-palette($primary, A700);
+      background-color: mat.get-color-from-palette($accent, 600);
+    }
+
+    .section-logo-thanks i {
+      color: mat.get-color-from-palette($teal, 300);
+    }
+
+    .label-title-thanks {
+      color: mat.get-color-from-palette($primary, A700);
+    }
+
+    .label-text1-thanks {
+      color: mat.get-color-from-palette($grey, 800);
+    }
+
+    .label-text2-thanks {
+      color: mat.get-color-from-palette($grey, 400);
+    }
+
+    .label-title2-thanks {
+      color: mat.get-color-from-palette($primary, 500);
+    }
+
+    .label-text3-thanks {
+      color: mat.get-color-from-palette($grey, 800);
+    }
+
+    .label-text4-thanks {
+      color: mat.get-color-from-palette($grey, 800);
+    }
+
+    @media (min-width: map_get($global-breakpoint, md)) {
+      .section-payment-btn-process {
+        background-color: mat.get-color-from-palette($grey, A100);
+
+      }
+    }
+  }
+
+}
+
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

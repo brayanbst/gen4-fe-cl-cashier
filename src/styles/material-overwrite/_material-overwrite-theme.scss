@@ -1,0 +1,16 @@
+// Material Overwrite
+@use 'form-field-theme';
+@use 'button-theme';
+@use 'select-theme';
+@use 'input-theme';
+@use 'button-toggle-theme';
+@use 'list-theme';
+
+@mixin all-component-themes($theme-or-color-config) {
+  @include form-field-theme.theme($theme-or-color-config);
+  @include button-theme.theme($theme-or-color-config);
+  @include select-theme.theme($theme-or-color-config);
+  @include input-theme.theme($theme-or-color-config);
+  @include button-toggle-theme.theme($theme-or-color-config);
+  @include list-theme.theme($theme-or-color-config);
+}

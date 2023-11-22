@@ -1,0 +1,100 @@
+<div class="container-coins-package">
+    <div class="row">
+      <div class="col-12 p-0">
+      </div>
+      <div class="col-12 p-0">
+        <div class="content-coins-package">
+          <div class="content-coins-package-section">
+            <div class="content-coins-package-section-component">
+              <div class="section-resume-coins-purchase">
+                <div class="resume-coins-purchase">
+                    <div class="col-md-6 section-amount-coins-purchase">
+                        <div class="amount-coins-purchase">
+                            {{'CHECKOUT'}}
+                          </div>
+                    </div>
+                  <div class="row">
+                    <div class="col-md-6 section-amount-coins-purchase">
+                      <div class="amount-coins-purchase">
+                        S/{{packageSelect.pricing}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12" class="container-payment-card">
+            
+            <!-- cardnumber, expiredate, cvv -->
+            <div class="sub-container-data-card">
+              <div class="col-md-6 section-payment-number-card">
+                <div class="sub-section-payment-number-card">
+                  <!-- Valida si tiene tarjeta historico o no-->
+                      <div>
+                        <div class="subsection-payment-data-card input-card-left">
+                            <form [formGroup]="form">
+                              <ng-container *ngFor="let field of fields">
+                                <ng-container [ngSwitch]="field.type">
+                                  <mat-form-field *ngSwitchCase="'select'" class="account-select" floatLabel="always" style="width: 100%;">
+                                    <mat-label>{{ 'Card Number' }}</mat-label>
+                                    <div style="display: flex; align-items: center;">
+                                      <i class="{{ selecteIcon }}" style="order: -1; margin-right: 5px;"></i>
+                                      <input matInput [formControlName]="field.key" [matAutocomplete]="auto" (input)="onInput($event)" required style="padding-left: 5px;"
+                                      maxlength="16"/>
+                                    </div> 
+                                    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelectionChange($event)">
+                                      <mat-option *ngFor="let option of field.options" [value]="option.value">
+                                        <div class="option-container">
+                                          <i class='{{ option.bankIcon }} bank-icon'></i>                                      
+                                          <span class="bank-label">{{option.label }} </span>
+                                          <!--button mat-icon-button class="delete-button" (click)="onDelete(option)">
+                                            <mat-icon>delete</mat-icon>
+                                          </button-->
+                                        </div>
+                                      </mat-option>
+                                    </mat-autocomplete>
+                                  </mat-form-field>
+                                </ng-container>
+                              </ng-container>
+                            </form>
+                          </div>
+                      </div>
+                </div>
+              </div>
+              <div class="col-md-6 section-payment-number-card"
+              [class.mb-2]="!cardSelected"
+              >
+                <div class="sub-section-payment-data-card w-date">
+                  <form [formGroup]="form">
+                    <ng-container *ngFor="let field of fields">
+                      <ng-container [ngSwitch]="field.type">
+                        <mat-form-field *ngSwitchCase="'text'" [ngClass]="field.key" floatLabel="always">
+                          <mat-label>{{ 'Expire Date' }}</mat-label>
+                          <input matInput [formControlName]="field.key" placeholder="mm/yy" mask="mm/yy" 
+                                 [inputMask]="cardInputMask" required>
+                        </mat-form-field>
+                      </ng-container>
+                    </ng-container>
+                  </form>
+                </div>
+                <div class="sub-section-payment-data-card w-cvv">
+                  <mat-form-field floatLabel="always">
+                    <mat-label>{{ 'CVV' }}</mat-label>
+                    <input matInput required maxlength="4" name="cvv" [(ngModel)]="cvvValue" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 section-payment-btn-process">
+            <div class="content-payment-btn-process">
+              <button mat-raised-button color="accent" class="btn-payment-proccess" (click)="ProccessPayment()">{{
+                'Process' }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

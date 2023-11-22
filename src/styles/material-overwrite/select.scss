@@ -1,0 +1,46 @@
+@import 'mixins/mixins';
+
+// SELECT
+.mat-form-field.mat-form-field-appearance-legacy.mat-form-field-type-mat-select {
+  @include mat-form-field-base();
+
+  /* Sizes */
+  &.field-small {
+    .mat-form-field-flex {
+      padding: 0 12px;
+
+      .mat-form-field-infix {
+        padding: 6px 0;
+
+        .mat-select {
+          font-size: 14px;
+        }
+
+        .mat-form-field-label-wrapper {
+          left: -12px;
+        }
+      }
+    }
+  }
+
+  &.field-large {
+    .mat-form-field-flex {
+      .mat-form-field-infix {
+        padding: 14px 0;
+      }
+    }
+  }
+}
+
+.mat-option.mat-active {
+  background: inherit;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: inherit;
+  font-weight: bold;
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: inherit;
+}
