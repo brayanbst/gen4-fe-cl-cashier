@@ -1,27 +1,21 @@
-# Gen4FeClCashier
+# Nombre del Proyecto Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+Breve descripción del proyecto: qué hace, para qué se utiliza, y cualquier otra información relevante sobre tu aplicación frontend desarrollada con Angular y Angular Material.
 
-## Development server
+## Comenzando
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local con fines de desarrollo y pruebas.
 
-## Code scaffolding
+### Pre-requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Qué cosas necesitas para instalar el software y cómo instalarlas.
 
-## Build
+- Node.js (asegúrate de usar una versión compatible con tu versión de Angular)
+- npm (viene instalado con Node.js)
+- Angular CLI (opcional, pero recomendado para el desarrollo de Angular)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Instalación
 
-## Running unit tests
+Una serie de ejemplos paso a paso que te indican cómo hacer funcionar un entorno de desarrollo.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clona el repositorio:
