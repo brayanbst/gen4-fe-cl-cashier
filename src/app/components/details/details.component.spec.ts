@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CashOutDetailsComponent } from './cash-out-details.component';
+import { CashOutDetailsComponent } from './details.component';
 
 describe('ResultComponent', () => {
   let component: CashOutDetailsComponent;

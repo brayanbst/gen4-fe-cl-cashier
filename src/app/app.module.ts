@@ -9,20 +9,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AppComponent } from './app.component';
 import { InputMaskModule } from '@ngneat/input-mask';
-import { CoinPackageRoutingModule } from './app.routes';
+import { AppRoutingModule } from './app.routes';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PaymentComponentComponent } from './components/payment/payment-component.component';
+import { CashOutDetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PaymentComponentComponent,
+    CashOutDetailsComponent,
   ],
   imports: [
     HttpClientModule,
     MatIconModule,
-    CoinPackageRoutingModule,
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -32,7 +34,7 @@ import { PaymentComponentComponent } from './components/payment/payment-componen
     MatCheckboxModule,
     MatButtonModule,
     MatAutocompleteModule,
-    InputMaskModule
+    InputMaskModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

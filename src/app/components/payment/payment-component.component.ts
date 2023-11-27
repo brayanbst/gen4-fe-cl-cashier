@@ -14,6 +14,13 @@ import { HttpCashierService } from './../../shared/services/http.service';
   styleUrls: ['./payment-component.component.scss']
 })
 export class PaymentComponentComponent implements OnInit{
+  isLoading = false;
+  private paymentDetailsSource = new BehaviorSubject<any>(null);
+  currentPaymentDetails = this.paymentDetailsSource.asObservable();
+
+  updatePaymentDetails(details: any) {
+    this.paymentDetailsSource.next(details);
+  }
     selected: boolean = false;
     selectorEmpty$ = new BehaviorSubject<Boolean>(false);
     fields = fields;
@@ -89,6 +96,7 @@ export class PaymentComponentComponent implements OnInit{
     }
   
     ProccessPayment(): void {
+      this.isLoading = true;
       const cardNumber = this.form.get('cardNumber')?.value;
       const expireDate = this.form.get('expireDate')?.value;
       let partes = expireDate.split('/');
@@ -113,12 +121,17 @@ export class PaymentComponentComponent implements OnInit{
                 }
     }
     
-      this.httpCashierService.payoutEstablishData(payload).pipe()
-      .subscribe({
+      this.httpCashierService.payoutEstablishData(payload).pipe().subscribe({
         next: (res: any) => {
-          console.log('TEST', res);
-          this.router.navigate(['/details', 1010]);
+          console.log('TEST', res.data.details.transactionId);
+          this.httpCashierService.updateTransaction(res);
+          this.isLoading = false;
+          this.router.navigate(['/details', res.data.details.transactionId]);
+        
         },
+        error: (error) => {
+          this.isLoading = false;
+        }
       });
 
       const last4Digits = cardNumber.slice(-4);

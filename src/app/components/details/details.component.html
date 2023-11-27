@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-12 container-thanks">
                 <div class="label-title-thanks">
-                    {{'cashier.purchase.thanks'}}
+                    {{'Thank you'}}
                 </div>
             </div>
             <div class="col-md-12 container-thanks">
@@ -26,13 +26,13 @@
             </div>
             <div class="col-md-12 container-thanks">
                 <div class="label-title2-thanks">
-                    {{'cashier.purchase.details'}}
+                    {{'Payment Receipt'}}
                 </div>
             </div>
             <div class="container-details">
                 <div class="col-md-12 container-thanks-details">
                     <div class="label-text3-thanks">
-                        {{'cashier.purchase.transactionId'}} :
+                        {{'transactionId'}} :
                     </div>
                     <div class="label-text4-thanks">
                         {{transactionId}}
@@ -40,30 +40,20 @@
                 </div>
                 <div class="col-md-12 container-thanks-details">
                     <div class="label-text3-thanks">
-                        {{'cashier.purchase.amount'}} :
+                        {{'Amount'}} :
                     </div>
                     <div class="label-text4-thanks">
-                        $ {{packageSelect.pricing}}
+                        $ {{amount}}
                     </div>
                 </div>
                 <div class="col-md-12 container-thanks-details">
                     <div class="label-text3-thanks">
-                        {{'cashier.purchase.coins'}} :
+                        {{'Description'}} :
                     </div>
                     <div class="label-text4-thanks">
-                        {{packageSelect.finalFunCoins}}
+                        {{description}}
                     </div>
                 </div>
-                <ng-container>
-                    <div class="col-md-12 container-thanks-details">
-                        <div class="label-text3-thanks">
-                            {{'cashier.purchase.sweeps'}} :
-                        </div>
-                        <div class="label-text4-thanks">
-                            {{packageSelect.finalRealCoins}}
-                        </div>
-                    </div>
-                </ng-container>
             </div>
             <div class="col-md-12 section-payment-btn-process">
                 <div  class="content-payment-btn-process">

@@ -70,9 +70,6 @@
       &-elements{
         display: flex;
         justify-content: space-between;
-        //padding-left:45px;
-        //padding-right:45px;
-        //padding-top:5px;
         &-flex{
           display: none;
           &-section{
@@ -219,7 +216,6 @@
   }
 
   .content-payment-btn-process{
-    //padding: 10px 2em;
     display: flex;
     justify-content: center;
   }
@@ -438,7 +434,6 @@
   width: 150px;
 }
 
-/* Estilo para el botón que despliega las opciones */
 .mat-select-trigger {
   background-color: #f5f5f5;
   border: none;
@@ -448,12 +443,10 @@
   border: solid;
 }
 
-/* Estilo para las opciones del selector */
 .mat-option {
   color: #4940b5;
 }
 
-/* Estilo para la opción seleccionada */
 .mat-selected {
   background-color: #f0f0f0;
 }
@@ -479,4 +472,42 @@
 .bank-label {
   font-size: 17px;
 }
+}
+
+.loading-indicator {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 1000;
+  
+}
+
+.loading-icon,
+.loading-indicator p {
+  margin: 5px;
+}
+
+.loading-icon {
+  width: 50px; 
+  height: 50px; 
+}
+
+
+.loading-icon {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-icon {
+  animation: spin 2s linear infinite;
 }
